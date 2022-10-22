@@ -6,9 +6,16 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  environment:
+    DOTENV_KEY: ${param:DOTENV_KEY}
 
 functions:
   api:
     handler: handler.handler
     events:
       - httpApi: '*'
+
+package:
+  patterns:
+    - '!.env*'
+    - '.env.vault'
