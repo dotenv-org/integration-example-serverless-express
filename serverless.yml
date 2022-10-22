@@ -1,0 +1,14 @@
+org: dotenv
+app: integration-example-aws-serverless
+service: integration-example-serverless-express
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: '*'
