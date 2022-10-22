@@ -5,11 +5,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res, next) => {
-	console.log(process.env)
-
   return res.status(200).json({
     message: `Hello ${process.env.HELLO}`,
-		env: process.env,
   });
 });
 
